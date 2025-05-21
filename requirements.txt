@@ -1,0 +1,13 @@
+imgaug
+opencv-python
+keras
+torch
+tensorflow
+image_similarity_measures
+numpy
+scipy
+matplotlib
+scikit-image
+scikit-learn
+jupyter
+pyfftw

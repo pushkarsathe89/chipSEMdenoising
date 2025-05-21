@@ -27,6 +27,7 @@ tf.config.list_physical_devices('GPU')
 
 import glob 
 import numpy as np
+import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.image as img
 import imageio
@@ -46,6 +47,7 @@ import shutil
 import os
 from IPython import display
 from IPython import get_ipython
+import time
 
 
 import tensorflow as tf 
@@ -64,7 +66,7 @@ np.random.seed(456)
 
 
 
-get_ipython().run_line_magic('matplotlib', 'inline')
+matplotlib.use('Agg')
 
 
 
@@ -267,7 +269,13 @@ if True:
 # In[22]:
 
 
-get_ipython().run_cell_magic('time', '', 'processed_train  = augment_pipeline(pipeline, full_train.reshape(-1,target_height,target_width))\nprocessed_target = augment_pipeline(pipeline, full_target.reshape(-1,target_height,target_width))\nprocessed_train  = processed_train.reshape(-1,target_height,target_width,1)\nprocessed_target = processed_target.reshape(-1,target_height,target_width,1)\nprocessed_train.shape')
+start_time = time.time()
+processed_train  = augment_pipeline(pipeline, full_train.reshape(-1, target_height, target_width))
+processed_target = augment_pipeline(pipeline, full_target.reshape(-1, target_height, target_width))
+processed_train  = processed_train.reshape(-1, target_height, target_width, 1)
+processed_target = processed_target.reshape(-1, target_height, target_width, 1)
+print("processed_train.shape:", processed_train.shape)
+print("Time taken: {:.2f} seconds".format(time.time() - start_time))
 
 
 
@@ -322,7 +330,17 @@ checkpoint2 = ModelCheckpoint('best_loss.h5', monitor='loss', save_best_only=Tru
 
 
 #ForTest
-get_ipython().run_cell_magic('time', '', 'history = AEmodel.fit(processed_train, processed_target, batch_size=1, epochs=40, verbose=1,\n                        validation_split=0.2,\n#                       validation_data=(val, target_val),\n                        callbacks=[checkpoint2])')
+start_train = time.time()
+history = AEmodel.fit(
+    processed_train, processed_target,
+    batch_size=1,
+    epochs=40,
+    verbose=1,
+    validation_split=0.2,
+    # validation_data=(val, target_val),
+    callbacks=[checkpoint2]
+)
+print("Training time: {:.2f} seconds".format(time.time() - start_train))
 
 
 plt.plot(history.history['loss'])

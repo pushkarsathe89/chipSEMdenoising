@@ -11,7 +11,7 @@
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
-import tensorflow_addons as tfa
+# import tensorflow_addons as tfa
 from tensorflow.keras.callbacks import History
 import matplotlib.pyplot as plt
 import matplotlib.image as img

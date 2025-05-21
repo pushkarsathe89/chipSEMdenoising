@@ -1,4 +1,13 @@
-# SEMdenoising
-Our paper has been published and can be found here: https://iopscience.iop.org/article/10.1088/1361-6501/ad7e41/meta 
+# ChipsSEMDensoising
 
-If you have any questions, please contact: seoleuns@kriss.re.kr
+
+## Installation
+
+To set up the environment, run:
+
+```bash
+conda env create -f environment.yml
+conda activate semdenoising
+```
+## Credits
+This repository builds upon the methods the work from this GitHub repository: https://github.com/seoleuns/SEMdenoising
