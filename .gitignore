@@ -1,0 +1,6 @@
+chipSEMdenoising/
+.egg-info/
+__pycache__/
+*.tgz
+snapshot/
+Data/npy_data/

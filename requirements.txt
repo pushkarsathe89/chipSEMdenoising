@@ -1,8 +1,10 @@
 imgaug
 opencv-python
-keras
 torch
-tensorflow
+tensorflow==2.15.1
+tensorflow-datasets
+tensorflow-addons
+keras
 image_similarity_measures
 numpy
 scipy
@@ -11,3 +13,4 @@ scikit-image
 scikit-learn
 jupyter
 pyfftw
+pandas

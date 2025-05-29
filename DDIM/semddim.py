@@ -8,22 +8,22 @@ import tensorflow as tf
 import tensorflow_datasets as tfds
 from tensorflow import keras
 from tensorflow.keras import layers
-import tensorflow_addons as tfa
-from tensorflow.keras.callbacks import History
+# import tensorflow_addons as tfa
+# from tensorflow.keras.callbacks import History
 import matplotlib.image as img
 import numpy as np
 import math
-import re
+# import re
 import os
-import random
+# import random
 import cv2
 from PIL import Image
-import imageio
-import shutil
-import glob
+# import imageio
+# import shutil
+# import glob
 from tensorflow.python.client import device_lib
 
-from keras.models import load_model
+# from keras.models import load_model
 from keras.applications.inception_v3 import InceptionV3
 
 
@@ -212,7 +212,7 @@ train_dataset = getSet(fn_photo)
 val_dataset = getSet(fn_photo1)
 test_dataset = getSet(fn_noise)
 
-
+# 
 import numpy as np
 
 

@@ -16,7 +16,7 @@ from keras.optimizers import Adam
 #from skimage.measure import peak_signal_noise_ratio, compare_ssim
 from skimage.metrics import peak_signal_noise_ratio
 from skimage.metrics import structural_similarity as compssim
-import models
+# import models
 import cv2
 import tensorflow as tf
 
@@ -170,7 +170,7 @@ from keras.models import load_model
 from tensorflow.keras.optimizers import Adam
 from skimage.metrics import peak_signal_noise_ratio as compare_psnr
 from skimage.metrics import structural_similarity as compare_ssim
-import models
+# import models
 from importlib import reload
 
 ## Params
@@ -252,7 +252,6 @@ def train_datagen(y_, batch_size=8):
             yield ge_batch_x, ge_batch_y
         
 def train():
-    
     data = load_train_data()
     data = data.reshape((data.shape[0],data.shape[1],data.shape[2],1))
     data = data.astype('float32')/255.0

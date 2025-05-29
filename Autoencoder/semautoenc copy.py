@@ -47,7 +47,7 @@ list_devices()
 # Clean up previous data
 def clean_data_dirs():
     extensions = ['*.tif', '*.jpg']
-    dirs = ['Data/train', 'Data/train_cleaned', 'Data/test', 'Data/test_cleaned']
+    dirs = ['Data/time/low', 'Data/time/high', 'Data/test', 'Data/test_cleaned']
     for img_path in dirs:
         for ext in extensions:
             for file in glob.glob(os.path.join(img_path, ext)):
